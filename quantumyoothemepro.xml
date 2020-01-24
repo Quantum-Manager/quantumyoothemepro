@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.8" group="system" method="upgrade">
+	<name>PLG_QUANTUMYOOTHEMEPRO</name>
+	<creationDate>23.12.2019</creationDate>
+	<author>Tsymbal</author>
+	<authorEmail>cymbal@delo-design.ru</authorEmail>
+	<authorUrl>https://www.norrnext.com</authorUrl>
+	<copyright>Copyright © 2019 Delo Design &amp; NorrNext. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see license.txt</license>
+	<version>1.0</version>
+	<description>PLG_QUANTUMYOOTHEMEPRO_XML_DESCRIPTION</description>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_quantumyoothemepro.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_quantumyoothemepro.sys.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_system_quantumyoothemepro.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_system_quantumyoothemepro.sys.ini</language>
+	</languages>
+
+	<media folder="media" destination="plg_system_quantumyoothemepro">
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+	<files>
+		<filename plugin="quantumyoothemepro">quantumyoothemepro.php</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+
+</extension>
