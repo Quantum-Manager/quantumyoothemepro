@@ -11,6 +11,7 @@
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Database\DatabaseDriver;
@@ -83,6 +84,18 @@ class plgSystemQuantumyoothemepro extends CMSPlugin
 			'relative' => true
 		]);
 
+		JLoader::register('QuantummanagerHelper', JPATH_SITE . '/administrator/components/com_quantummanager/helpers/quantummanager.php');
+		QuantummanagerHelper::loadLang();
+
+		$insert = htmlspecialchars(Text::_('COM_QUANTUMMANAGER_WINDOW_INSERT'), ENT_QUOTES);
+		$cancel = htmlspecialchars(Text::_('COM_QUANTUMMANAGER_WINDOW_CANCEL'), ENT_QUOTES);
+		Factory::getDocument()->addScriptDeclaration(<<<EOT
+window.QuantumYoothemeproLang = {
+		'insert': "{$insert}",
+		'cancel': "{$cancel}",
+};
+EOT
+		);
 	}
 
 
