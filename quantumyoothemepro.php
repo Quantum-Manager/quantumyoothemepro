@@ -73,14 +73,12 @@ class plgSystemQuantumyoothemepro extends CMSPlugin
 			return;
 		}
 
-		HTMLHelper::_('jquery.framework');
-
-		HTMLHelper::_('stylesheet', 'plg_system_quantumyoothemepro/yoothemepro.css', [
+		HTMLHelper::_('script', 'plg_system_quantumyoothemepro/modal.js', [
 			'version' => filemtime(__FILE__),
 			'relative' => true
 		]);
 
-		HTMLHelper::_('script', 'plg_system_quantumyoothemepro/yoothemepro.js', [
+		HTMLHelper::_('script', 'com_quantummanager/utils.js', [
 			'version' => filemtime(__FILE__),
 			'relative' => true
 		]);
@@ -90,7 +88,7 @@ class plgSystemQuantumyoothemepro extends CMSPlugin
 
 	public function onAjaxQuantumyoothemepro()
 	{
-		$layout = new FileLayout('modal', JPATH_SITE . '/plugins/system/quantumyoothemepro/tmpl');
+		$layout = new FileLayout('select', JPATH_SITE . '/plugins/system/quantumyoothemepro/tmpl');
 		echo $layout->render();
 		//$this->app->close();
 	}
