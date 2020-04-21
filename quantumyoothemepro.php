@@ -87,8 +87,8 @@ class plgSystemQuantumyoothemepro extends CMSPlugin
 		JLoader::register('QuantummanagerHelper', JPATH_SITE . '/administrator/components/com_quantummanager/helpers/quantummanager.php');
 		QuantummanagerHelper::loadLang();
 
-		$insert = htmlspecialchars(Text::_('COM_QUANTUMMANAGER_WINDOW_INSERT'), ENT_QUOTES);
-		$cancel = htmlspecialchars(Text::_('COM_QUANTUMMANAGER_WINDOW_CANCEL'), ENT_QUOTES);
+		$insert = htmlspecialchars(Text::_('COM_QUANTUMMANAGER_ACTION_SELECT'), ENT_QUOTES);
+		$cancel = htmlspecialchars(Text::_('COM_QUANTUMMANAGER_ACTION_CANCEL'), ENT_QUOTES);
 		Factory::getDocument()->addScriptDeclaration(<<<EOT
 window.QuantumYoothemeproLang = {
 		'insert': "{$insert}",
