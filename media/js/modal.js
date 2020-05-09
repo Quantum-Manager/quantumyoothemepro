@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded' ,function () {
                         return;
                     }
 
+                    if (QuantummanagerYoothemepro.wrapClick.classList.contains('uk-button')) {
+                        return;
+                    }
+
                     element.remove();
                     if (
                         QuantummanagerYoothemepro.fieldWrap.classList.contains('yo-thumbnail') ||
