@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded' ,function () {
-    console.log(window.parent.QuantummanagerYoothemepro);
     let QuantummanagerYoothemepro = window.parent.QuantummanagerYoothemepro,
-    buttonInsert = QuantummanagerYoothemepro.modal.querySelector('.button-insert'),
-    pathFile = '';
+        buttonInsert = QuantummanagerYoothemepro.modal.querySelector('.button-insert'),
+        pathFile = '';
     buttonInsert.setAttribute('disabled', 'disabled');
 
     buttonInsert.addEventListener('click', function () {
