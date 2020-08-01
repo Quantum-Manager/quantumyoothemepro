@@ -88,6 +88,13 @@ try {
 		];
 	}
 
+    if((int)QuantummanagerHelper::getParamsComponentValue('pexels', '1'))
+    {
+        $fields['quantumpexels'] = [
+            'position' => 'bottom'
+        ];
+    }
+
 	if((int)QuantummanagerHelper::getParamsComponentValue('pixabay', '1'))
 	{
 		$fields['quantumpixabay'] = [
