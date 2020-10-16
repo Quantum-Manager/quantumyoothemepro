@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded' ,function () {
         UIkit.util.on('div', 'beforeshow', function (ev) {
             let element = ev.target;
             if (element.classList.contains('uk-modal')) {
-                let check = (element.querySelector('.yo-finder-body') !== null) || (element.querySelector('.yo-finder-search') !== null);
+                let check = element.querySelector('.yo-finder-body') !== null ||
+                        element.querySelector('.yo-finder-search') !== null ||
+                        element.innerHTML.indexOf('<a href="">files</a>') !== -1;
+
                 if (check) {
                     QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
 
@@ -63,14 +66,14 @@ document.addEventListener('DOMContentLoaded' ,function () {
                 QuantumUtils
                     .createElement('div', {'class': 'uk-modal-container quantummanageryoothemepro-select', 'uk-modal': ''})
                     .addChild('div', {'class': 'uk-modal-dialog'})
-                    .addChild('div', {'class': 'uk-modal-body uk-padding-remove'})
-                    .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': '#', 'style': 'height:700px'})
-                    .getParent()
-                    .addChild('div', {'class': 'uk-modal-footer uk-text-right'})
-                    .add('button', {'class': 'uk-button uk-button-text uk-modal-close uk-margin-right'}, QuantumYoothemeproLang.cancel)
-                    .add('button', {'class': 'uk-button uk-button-primary button-insert'}, QuantumYoothemeproLang.insert)
-                    .getParent()
-                    .getParent()
+                        .addChild('div', {'class': 'uk-modal-body uk-padding-remove'})
+                            .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': '#', 'style': 'height:700px'})
+                            .getParent()
+                        .addChild('div', {'class': 'uk-modal-footer uk-text-right'})
+                            .add('button', {'class': 'uk-button uk-button-text uk-modal-close uk-margin-right'}, QuantumYoothemeproLang.cancel)
+                            .add('button', {'class': 'uk-button uk-button-primary button-insert'}, QuantumYoothemeproLang.insert)
+                            .getParent()
+                        .getParent()
                     .build()
             );
 
@@ -79,7 +82,6 @@ document.addEventListener('DOMContentLoaded' ,function () {
             QuantummanagerYoothemepro.modal.querySelector('iframe').setAttribute('src', 'index.php?option=com_ajax&plugin=quantumyoothemepro&group=system&format=html&tmpl=component')
         }
 
-        console.log(modal);
         UIkit.modal(modal).show();
     }
 
@@ -92,10 +94,10 @@ document.addEventListener('DOMContentLoaded' ,function () {
                 QuantumUtils
                     .createElement('div', {'class': 'uk-modal-container quantummanageryoothemepro-files', 'uk-modal': ''})
                     .addChild('div', {'class': 'uk-modal-dialog'})
-                    .addChild('div', {'class': 'uk-modal-body uk-padding-remove'})
-                    .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': 'index.php?option=com_quantummanager&layout=modal&tmpl=component', 'style': 'height:700px'})
-                    .getParent()
-                    .getParent()
+                        .addChild('div', {'class': 'uk-modal-body uk-padding-remove'})
+                            .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': 'index.php?option=com_quantummanager&layout=modal&tmpl=component', 'style': 'height:700px'})
+                            .getParent()
+                        .getParent()
                     .build()
             );
 
