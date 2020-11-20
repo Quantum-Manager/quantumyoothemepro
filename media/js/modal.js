@@ -7,42 +7,41 @@ document.addEventListener('DOMContentLoaded' ,function () {
 
     document.querySelector('body').addEventListener('click', function (ev) {
         QuantummanagerYoothemepro.wrapClick = ev.target;
+        checkModal();
     });
 
-    setTimeout(function () {
-        UIkit.util.on('div', 'beforeshow', function (ev) {
-            let element = ev.target;
-            if (element.classList.contains('uk-modal')) {
-                let check = element.querySelector('.yo-finder-body') !== null ||
-                        element.querySelector('.yo-finder-search') !== null ||
-                        element.innerHTML.indexOf('<a href="">files</a>') !== -1;
+    function checkModal() {
+        let element = document.querySelector('.uk-modal');
+        if (element !== null) {
+            let check = element.querySelector('.yo-finder-body') !== null ||
+                element.querySelector('.yo-finder-search') !== null ||
+                element.innerHTML.indexOf('<a href="">files</a>') !== -1;
 
-                if (check) {
-                    QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
+            if (check) {
+                QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
 
-                    if (QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-dropdown')) {
-                        return;
-                    }
-
-                    if (QuantummanagerYoothemepro.wrapClick.classList.contains('uk-button')) {
-                        return;
-                    }
-
-                    element.classList.add('uk-hidden');
-                    UIkit.modal(element).hide();
-                    if (
-                        QuantummanagerYoothemepro.fieldWrap.classList.contains('yo-thumbnail') ||
-                        QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-position-center-right')
-                    ) {
-                        QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.fieldWrap.parentElement;
-                    }
-                    setTimeout(function () {
-                        showModalSelect();
-                    }, 200)
+                if (QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-dropdown')) {
+                    return;
                 }
+
+                if (QuantummanagerYoothemepro.wrapClick.classList.contains('uk-button')) {
+                    return;
+                }
+
+                element.classList.add('uk-hidden');
+                UIkit.modal(element).hide();
+                if (
+                    QuantummanagerYoothemepro.fieldWrap.classList.contains('yo-thumbnail') ||
+                    QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-position-center-right')
+                ) {
+                    QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.fieldWrap.parentElement;
+                }
+                setTimeout(function () {
+                    showModalSelect();
+                }, 200)
             }
-        });
-    }, 200);
+        }
+    }
 
     if(window.YooExtendToolbar !== undefined) {
         YooExtendToolbar.appendButton({
@@ -62,16 +61,16 @@ document.addEventListener('DOMContentLoaded' ,function () {
 
         let modal = document.querySelector('.quantummanageryoothemepro-select');
         if(modal === null) {
-            document.querySelector('.uk-noconflict').append(
-                QuantumUtils
+            document.querySelector('body').append(
+                window.QuantumUtils
                     .createElement('div', {'class': 'uk-modal-container quantummanageryoothemepro-select', 'uk-modal': ''})
                     .addChild('div', {'class': 'uk-modal-dialog'})
                         .addChild('div', {'class': 'uk-modal-body uk-padding-remove'})
                             .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': '#', 'style': 'height:700px'})
                             .getParent()
                         .addChild('div', {'class': 'uk-modal-footer uk-text-right'})
-                            .add('button', {'class': 'uk-button uk-button-text uk-modal-close uk-margin-right'}, QuantumYoothemeproLang.cancel)
-                            .add('button', {'class': 'uk-button uk-button-primary button-insert'}, QuantumYoothemeproLang.insert)
+                            .add('button', {'class': 'uk-button uk-button-text uk-modal-close uk-margin-right'}, window.QuantumYoothemeproLang.cancel)
+                            .add('button', {'class': 'uk-button uk-button-primary button-insert'}, window.QuantumYoothemeproLang.insert)
                             .getParent()
                         .getParent()
                     .build()
