@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
 
     function checkModal() {
         setTimeout(function () {
-            let element = document.querySelector('.uk-modal:not(.quantummanageryoothemepro-select)');
-            console.log(element);
+            let element = document.querySelector('.uk-modal:not(.quantummanageryoothemepro-select):last-child');
             if (element !== null) {
                 let check = element.innerHTML.indexOf('>files</a>') !== -1;
 
