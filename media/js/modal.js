@@ -10,37 +10,39 @@ document.addEventListener('DOMContentLoaded' ,function () {
         checkModal();
     });
 
+
     function checkModal() {
-        let element = document.querySelector('.uk-modal');
-        if (element !== null) {
-            let check = element.querySelector('.yo-finder-body') !== null ||
-                element.querySelector('.yo-finder-search') !== null ||
-                element.innerHTML.indexOf('<a href="">files</a>') !== -1;
+        setTimeout(function () {
+            let element = document.querySelector('.uk-modal:not(.quantummanageryoothemepro-select)');
+            console.log(element);
+            if (element !== null) {
+                let check = element.innerHTML.indexOf('>files</a>') !== -1;
 
-            if (check) {
-                QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
+                if (check) {
+                    QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
 
-                if (QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-dropdown')) {
-                    return;
+                    if (QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-dropdown')) {
+                        return;
+                    }
+
+                    if (QuantummanagerYoothemepro.wrapClick.classList.contains('uk-button')) {
+                        return;
+                    }
+
+                    element.classList.add('uk-hidden');
+                    UIkit.modal(element).hide();
+                    if (
+                        QuantummanagerYoothemepro.fieldWrap.classList.contains('yo-thumbnail') ||
+                        QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-position-center-right')
+                    ) {
+                        QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.fieldWrap.parentElement;
+                    }
+                    setTimeout(function () {
+                        showModalSelect();
+                    }, 200)
                 }
-
-                if (QuantummanagerYoothemepro.wrapClick.classList.contains('uk-button')) {
-                    return;
-                }
-
-                element.classList.add('uk-hidden');
-                UIkit.modal(element).hide();
-                if (
-                    QuantummanagerYoothemepro.fieldWrap.classList.contains('yo-thumbnail') ||
-                    QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-position-center-right')
-                ) {
-                    QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.fieldWrap.parentElement;
-                }
-                setTimeout(function () {
-                    showModalSelect();
-                }, 200)
             }
-        }
+        }, 100);
     }
 
     if(window.YooExtendToolbar !== undefined) {
