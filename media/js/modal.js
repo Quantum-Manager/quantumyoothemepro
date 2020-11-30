@@ -16,17 +16,21 @@ document.addEventListener('DOMContentLoaded' ,function () {
             let element = document.querySelector('.uk-modal:not(.quantummanageryoothemepro-select):last-child');
             if (element !== null) {
                 let check = element.innerHTML.indexOf('>files</a>') !== -1;
+                QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
+
+                if (QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-dropdown')) {
+                    check = false;
+                }
+
+                if (QuantummanagerYoothemepro.wrapClick.classList.contains('uk-button')) {
+                    check = false;
+                }
+
+                if (QuantummanagerYoothemepro.wrapClick.classList.contains('uk-modal')) {
+                    check = false;
+                }
 
                 if (check) {
-                    QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
-
-                    if (QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-dropdown')) {
-                        return;
-                    }
-
-                    if (QuantummanagerYoothemepro.wrapClick.classList.contains('uk-button')) {
-                        return;
-                    }
 
                     element.classList.add('uk-hidden');
                     UIkit.modal(element).hide();
