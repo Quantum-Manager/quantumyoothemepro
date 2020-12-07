@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded' ,function () {
                     check = false;
                 }
 
+                if (QuantummanagerYoothemepro.wrapClick.closest('.uk-modal') !== null) {
+                    check = false;
+                }
+
                 if (check) {
 
                     element.classList.add('uk-hidden');
