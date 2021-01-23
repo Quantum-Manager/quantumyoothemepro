@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
     document.querySelector('body').addEventListener('click', function (ev) {
         QuantummanagerYoothemepro.wrapClick = ev.target;
         checkModal();
+        console.log('click');
     });
 
 
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
                 if (check) {
 
                     element.classList.add('uk-hidden');
-                    UIkit.modal(element).hide();
+                    UIkit.modal(element, {stack: true}).hide();
                     if (
                         QuantummanagerYoothemepro.fieldWrap.classList.contains('yo-thumbnail') ||
                         QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-position-center-right')
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
                     }
                     setTimeout(function () {
                         showModalSelect();
-                    }, 200)
+                    }, 200);
                 }
             }
         }, 100);
@@ -90,6 +91,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
             QuantummanagerYoothemepro.modal.querySelector('iframe').setAttribute('src', 'index.php?option=com_ajax&plugin=quantumyoothemepro&group=system&format=html&tmpl=component')
         }
 
+        console.log('start', modal);
         UIkit.modal(modal).show();
     }
 
