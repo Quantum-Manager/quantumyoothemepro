@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded' ,function () {
                 }
 
                 if (check) {
-
                     element.classList.add('uk-hidden');
                     UIkit.modal(element, {stack: true}).hide();
                     if (
@@ -45,9 +44,8 @@ document.addEventListener('DOMContentLoaded' ,function () {
                     ) {
                         QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.fieldWrap.parentElement;
                     }
-                    setTimeout(function () {
-                        showModalSelect();
-                    }, 200);
+
+                    showModalSelect();
                 }
             }
         }, 100);
