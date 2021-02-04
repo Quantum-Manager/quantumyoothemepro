@@ -8,13 +8,30 @@ document.addEventListener('DOMContentLoaded' ,function () {
     document.querySelector('body').addEventListener('click', function (ev) {
         QuantummanagerYoothemepro.wrapClick = ev.target;
         checkModal();
-        console.log('click');
     });
 
 
     function checkModal() {
         setTimeout(function () {
-            let element = document.querySelector('.uk-modal:not(.quantummanageryoothemepro-select):last-child');
+            let element = null;
+            let elements = document.querySelectorAll('.uk-modal');
+
+            for (let i=elements.length-1;i>=0;i--) {
+                let flag = true;
+                if(elements[i].classList.contains('quantummanageryoothemepro-select')) {
+                    flag = false;
+                }
+
+                if(elements[i].getAttribute('id') === 'jYProExtraModal') {
+                    flag = false;
+                }
+
+                if(flag)
+                {
+                    element = elements[i];
+                }
+            }
+
             if (element !== null) {
                 let check = element.innerHTML.indexOf('>files</a>') !== -1;
                 QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
@@ -89,7 +106,6 @@ document.addEventListener('DOMContentLoaded' ,function () {
             QuantummanagerYoothemepro.modal.querySelector('iframe').setAttribute('src', 'index.php?option=com_ajax&plugin=quantumyoothemepro&group=system&format=html&tmpl=component')
         }
 
-        console.log('start', modal);
         UIkit.modal(modal).show();
     }
 
