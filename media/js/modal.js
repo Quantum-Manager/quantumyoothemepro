@@ -22,9 +22,15 @@ document.addEventListener('DOMContentLoaded' ,function () {
                     flag = false;
                 }
 
+                if(elements[i].classList.contains('quantummanageryoothemepro-files')) {
+                    flag = false;
+                }
+
                 if(elements[i].getAttribute('id') === 'jYProExtraModal') {
                     flag = false;
                 }
+
+
 
                 if(flag)
                 {
