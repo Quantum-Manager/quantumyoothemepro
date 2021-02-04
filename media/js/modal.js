@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
                     .createElement('div', {'class': 'uk-modal-container quantummanageryoothemepro-select', 'uk-modal': ''})
                     .addChild('div', {'class': 'uk-modal-dialog'})
                         .addChild('div', {'class': 'uk-modal-body uk-padding-remove'})
-                            .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': '#', 'style': 'height:700px'})
+                            .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': '#', 'style': 'height:' + getHeight() + 'px'})
                             .getParent()
                         .addChild('div', {'class': 'uk-modal-footer uk-text-right'})
                             .add('button', {'class': 'uk-button uk-button-text uk-modal-close uk-margin-right'}, window.QuantumYoothemeproLang.cancel)
@@ -114,12 +114,17 @@ document.addEventListener('DOMContentLoaded' ,function () {
 
         let modal = document.querySelector('.quantummanageryoothemepro-files');
         if(modal === null) {
-            document.querySelector('.uk-noconflict').append(
+            let append = document.querySelector('.uk-noconflict');
+            if(append === null) {
+                append = document.querySelector('body');
+            }
+
+            append.append(
                 QuantumUtils
                     .createElement('div', {'class': 'uk-modal-container quantummanageryoothemepro-files', 'uk-modal': ''})
                     .addChild('div', {'class': 'uk-modal-dialog'})
                         .addChild('div', {'class': 'uk-modal-body uk-padding-remove'})
-                            .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': 'index.php?option=com_quantummanager&layout=modal&tmpl=component', 'style': 'height:700px'})
+                            .add('iframe', {'class': 'uk-width-1-1 uk-height-1-1', 'src': 'index.php?option=com_quantummanager&layout=modal&tmpl=component', 'style': 'height:' + getHeight() + 'px'})
                             .getParent()
                         .getParent()
                     .build()
@@ -129,6 +134,13 @@ document.addEventListener('DOMContentLoaded' ,function () {
         }
 
         UIkit.modal(modal).show();
+    }
+
+
+    function getHeight() {
+        let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        height -= 170;
+        return height;
     }
 
 
