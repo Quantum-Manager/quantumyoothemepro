@@ -30,8 +30,6 @@ document.addEventListener('DOMContentLoaded' ,function () {
                     flag = false;
                 }
 
-
-
                 if(flag)
                 {
                     element = elements[i];
@@ -110,6 +108,9 @@ document.addEventListener('DOMContentLoaded' ,function () {
             modal = document.querySelector('.quantummanageryoothemepro-select');
             QuantummanagerYoothemepro.modal = modal;
             QuantummanagerYoothemepro.modal.querySelector('iframe').setAttribute('src', 'index.php?option=com_ajax&plugin=quantumyoothemepro&group=system&format=html&tmpl=component')
+        } else {
+            let iframe = QuantummanagerYoothemepro.modal.querySelector('iframe');
+            iframe.contentWindow.window.QuantumEventsDispatcher.trigger('reloadPaths');
         }
 
         UIkit.modal(modal).show();
