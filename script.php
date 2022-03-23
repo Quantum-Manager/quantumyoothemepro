@@ -41,7 +41,7 @@ class plgSystemQuantumyoothemeproInstallerScript
 			$query->where($db->qn('element') . ' = ' . $db->q('yootheme'));
 			$query->where($db->qn('type') . ' = ' . $db->q('plugin'));
 			$query->where($db->qn('folder') . ' = ' . $db->q('system'));
-			$result = $db->setQuery($query)->execute();
+			$result = $db->setQuery($query)->loadObject();
 
 			if (!empty($result->extension_id))
 			{
