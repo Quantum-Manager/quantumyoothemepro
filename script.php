@@ -30,7 +30,7 @@ class plgSystemQuantumyoothemeproInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 */
-	public function postflight($route, JAdapterInstance $adapter)
+	public function postflight($route, $adapter)
 	{
 		if ($route === 'install')
 		{
