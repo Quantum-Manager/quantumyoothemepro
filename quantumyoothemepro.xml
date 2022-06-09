@@ -10,6 +10,8 @@
 	<version>1.7</version>
 	<description>PLG_QUANTUMYOOTHEMEPRO_XML_DESCRIPTION</description>
 
+	<scriptfile>script.php</scriptfile>
+
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.plg_system_quantumyoothemepro.ini</language>
 		<language tag="en-GB">en-GB/en-GB.plg_system_quantumyoothemepro.sys.ini</language>
