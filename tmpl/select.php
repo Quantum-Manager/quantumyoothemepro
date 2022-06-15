@@ -92,19 +92,22 @@ try {
 		];
 	}
 
+    /*
     if((int)QuantummanagerHelper::getParamsComponentValue('pexels', '1'))
     {
         $fields['quantumpexels'] = [
             'position' => 'bottom'
         ];
     }
+    */
 
+    /*
 	if((int)QuantummanagerHelper::getParamsComponentValue('pixabay', '1'))
 	{
 		$fields['quantumpixabay'] = [
 			'position' => 'bottom'
 		];
-	}
+	}*/
 
 	$actions = QuantummanagerHelper::getActions();
 	if (!$actions->get('core.create'))
