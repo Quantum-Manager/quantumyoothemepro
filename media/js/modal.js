@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded' ,function () {
 
             for (let i=elements.length-1;i>=0;i--) {
                 let flag = true;
+
                 if(elements[i].classList.contains('quantummanageryoothemepro-select')) {
                     flag = false;
                 }
@@ -37,7 +38,11 @@ document.addEventListener('DOMContentLoaded' ,function () {
             }
 
             if (element !== null) {
-                let check = element.innerHTML.indexOf('>files</a>') !== -1;
+                let check =
+                    element.innerHTML.indexOf('>files</a>') !== -1 ||
+                    element.innerHTML.indexOf('>images</a>') !== -1 ||
+                    (element.querySelector('.yo-finder-body') !== undefined && element.querySelector('.yo-finder-body') !== null);
+
                 QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
 
                 if (QuantummanagerYoothemepro.fieldWrap.classList.contains('uk-dropdown')) {
