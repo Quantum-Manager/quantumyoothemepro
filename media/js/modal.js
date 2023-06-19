@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded' ,function () {
             if (element !== null) {
                 let check =
                     element.innerHTML.indexOf('>files</a>') !== -1 ||
-                    element.innerHTML.indexOf('>images</a>') !== -1 ||
-                    (element.querySelector('.yo-finder-body') !== undefined && element.querySelector('.yo-finder-body') !== null);
+                    element.innerHTML.indexOf('>images</a>') !== -1;
+
 
                 QuantummanagerYoothemepro.fieldWrap = QuantummanagerYoothemepro.wrapClick.closest('div');
 
