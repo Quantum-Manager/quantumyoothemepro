@@ -1,4 +1,5 @@
-<?php
+<?php namespace Joomla\Plugin\System\QuantumManagerMedia\Extension;
+
 /**
  * @package    quantummanager
  *
@@ -14,6 +15,7 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\FileLayout;
 use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\Component\QuantumManager\Administrator\Helper\QuantummanagerHelper;
 use Joomla\Database\DatabaseDriver;
 
 defined('_JEXEC') or die;
@@ -24,7 +26,7 @@ defined('_JEXEC') or die;
  * @package   quantumyoothemepro
  * @since     1.0.0
  */
-class plgSystemQuantumyoothemepro extends CMSPlugin
+class QuantumYoothemePro extends CMSPlugin
 {
 	/**
 	 * Application object
@@ -49,7 +51,6 @@ class plgSystemQuantumyoothemepro extends CMSPlugin
 	 * @since  1.0.0
 	 */
 	protected $autoloadLanguage = true;
-
 
 	/**
 	 * onAfterRender.
@@ -84,7 +85,6 @@ class plgSystemQuantumyoothemepro extends CMSPlugin
 			'relative' => true
 		]);
 
-		JLoader::register('QuantummanagerHelper', JPATH_SITE . '/administrator/components/com_quantummanager/helpers/quantummanager.php');
 		QuantummanagerHelper::loadLang();
 
 		$insert = htmlspecialchars(Text::_('COM_QUANTUMMANAGER_ACTION_SELECT'), ENT_QUOTES);
