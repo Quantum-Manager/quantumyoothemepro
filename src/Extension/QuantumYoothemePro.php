@@ -103,7 +103,6 @@ EOT
 	{
 		$layout = new FileLayout('select', JPATH_SITE . '/plugins/system/quantumyoothemepro/tmpl');
 		echo $layout->render();
-		//$this->app->close();
 	}
 
 }
