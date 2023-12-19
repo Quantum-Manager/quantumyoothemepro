@@ -1,4 +1,4 @@
-<?php namespace Joomla\Plugin\System\QuantumManagerMedia\Extension;
+<?php namespace Joomla\Plugin\System\QuantumYoothemePro\Extension;
 
 /**
  * @package    quantummanager

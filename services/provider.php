@@ -6,7 +6,7 @@ use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use Joomla\Event\DispatcherInterface;
-use Joomla\Plugin\System\QuantumManagerMedia\Extension\QuantumYoothemePro;
+use Joomla\Plugin\System\QuantumYoothemePro\Extension\QuantumYoothemePro;
 
 return new class implements ServiceProviderInterface {
 

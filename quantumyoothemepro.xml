@@ -9,7 +9,7 @@
     <license>GNU General Public License version 3 or later; see license.txt</license>
     <version>1.7.1</version>
     <description>PLG_QUANTUMYOOTHEMEPRO_XML_DESCRIPTION</description>
-    <namespace path="src">Joomla\Plugin\System\QuantumManagerMedia</namespace>
+    <namespace path="src">Joomla\Plugin\System\QuantumYoothemePro</namespace>
     <scriptfile>script.php</scriptfile>
 
     <languages folder="language">
