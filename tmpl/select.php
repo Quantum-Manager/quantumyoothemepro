@@ -81,14 +81,6 @@ try
 		],
 	];
 
-
-	if ((int) QuantummanagerHelper::getParamsComponentValue('unsplash', '1'))
-	{
-		$fields['quantumunsplash'] = [
-			'position' => 'bottom'
-		];
-	}
-
 	$actions = QuantummanagerHelper::getActions();
 	if (!$actions->get('core.create'))
 	{

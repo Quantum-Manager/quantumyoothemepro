@@ -1,4 +1,6 @@
-<?php \defined('_JEXEC') or die;
+<?php
+
+defined('_JEXEC') or die;
 
 use Joomla\CMS\Extension\PluginInterface;
 use Joomla\CMS\Factory;
@@ -10,13 +12,6 @@ use Joomla\Plugin\System\QuantumYoothemePro\Extension\QuantumYoothemePro;
 
 return new class implements ServiceProviderInterface {
 
-	/**
-	 * Registers the service provider with a DI container.
-	 *
-	 * @param   Container  $container  The DI container.
-	 *
-	 * @since   __DEPLOY_VERSION__
-	 */
 	public function register(Container $container)
 	{
 		$container->set(PluginInterface::class,
